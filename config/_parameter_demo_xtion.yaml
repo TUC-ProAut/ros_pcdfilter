@@ -28,7 +28,7 @@ buffer_pointcloud : true # save last pointcloud
 
 ## all nans within laserscan will be replaced by this range value
 ##   if < 0 then this feature will deactivated
-#laser_nan_replacement_value: 10 # meter
+#laser_nan_replacement_value: -1 # meter
 
 ###### filter ######
 
