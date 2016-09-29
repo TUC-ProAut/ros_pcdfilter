@@ -1,0 +1,677 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Status1
+      Splitter Ratio: 0.5
+    Tree Height: 895
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: xtion_cloud
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 0.5
+      Name: global_axis
+      Radius: 0.1
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: global_grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 5
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_footprint:
+          Value: true
+        base_footprint_summit_ctrl:
+          Value: true
+        base_link:
+          Value: true
+        battery_mount_link:
+          Value: true
+        global_danger_map:
+          Value: true
+        laser:
+          Value: true
+        laser_base_link:
+          Value: true
+        laser_base_link_uncalibrated:
+          Value: true
+        laser_end_link:
+          Value: true
+        laser_pan_link:
+          Value: true
+        local_danger_map:
+          Value: true
+        map:
+          Value: true
+        mico_api_origin:
+          Value: true
+        mico_end_effector:
+          Value: true
+        mico_ground:
+          Value: true
+        mico_link_1:
+          Value: true
+        mico_link_2:
+          Value: true
+        mico_link_3:
+          Value: true
+        mico_link_4:
+          Value: true
+        mico_link_5:
+          Value: true
+        mico_link_base:
+          Value: true
+        mico_link_finger_1:
+          Value: true
+        mico_link_finger_2:
+          Value: true
+        mico_link_finger_tip_1:
+          Value: true
+        mico_link_finger_tip_2:
+          Value: true
+        mico_link_finger_tip_plate_1:
+          Value: true
+        mico_link_finger_tip_plate_2:
+          Value: true
+        mico_link_hand:
+          Value: true
+        mico_workspace:
+          Value: true
+        mug_mount_link:
+          Value: true
+        multisense/accel:
+          Value: true
+        multisense/gyro:
+          Value: true
+        multisense/head:
+          Value: true
+        multisense/head_root:
+          Value: true
+        multisense/left_camera_frame:
+          Value: true
+        multisense/left_camera_optical_frame:
+          Value: true
+        multisense/mag:
+          Value: true
+        multisense/right_camera_frame:
+          Value: true
+        multisense/right_camera_optical_frame:
+          Value: true
+        odom:
+          Value: true
+        pan_tilt_base_link:
+          Value: true
+        pan_tilt_base_link_uncalibrated:
+          Value: true
+        pan_tilt_end_link:
+          Value: true
+        pan_tilt_pan_link:
+          Value: true
+        pan_tilt_tilt_link:
+          Value: true
+        projected_sensor_link:
+          Value: true
+        root:
+          Value: true
+        sensor2_link:
+          Value: true
+        sensor_link:
+          Value: true
+        summit_baseplate_link:
+          Value: true
+        summit_frontleft_whole:
+          Value: true
+        summit_frontright_whole:
+          Value: true
+        summit_mainbody_link:
+          Value: true
+        summit_suspension_link:
+          Value: true
+        summit_tower2_link:
+          Value: true
+        summit_tower_link:
+          Value: true
+        summit_wheels_link:
+          Value: true
+        xsens:
+          Value: true
+        xtion_depth_frame:
+          Value: true
+        xtion_depth_optical_frame:
+          Value: true
+        xtion_link:
+          Value: true
+        xtion_link_uncalibrated:
+          Value: true
+        xtion_rgb_frame:
+          Value: true
+        xtion_rgb_optical_frame:
+          Value: true
+      Marker Scale: 0.3
+      Name: robot_tf
+      Show Arrows: true
+      Show Axes: true
+      Show Names: false
+      Tree:
+        map:
+          global_danger_map:
+            {}
+          odom:
+            base_footprint:
+              base_link:
+                battery_mount_link:
+                  {}
+                mug_mount_link:
+                  {}
+                projected_sensor_link:
+                  {}
+                root:
+                  mico_link_base:
+                    mico_api_origin:
+                      {}
+                    mico_link_1:
+                      mico_link_2:
+                        mico_link_3:
+                          mico_link_4:
+                            mico_link_5:
+                              mico_link_hand:
+                                mico_end_effector:
+                                  {}
+                                mico_link_finger_1:
+                                  mico_link_finger_tip_1:
+                                    mico_link_finger_tip_plate_1:
+                                      {}
+                                mico_link_finger_2:
+                                  mico_link_finger_tip_2:
+                                    mico_link_finger_tip_plate_2:
+                                      {}
+                sensor2_link:
+                  xsens:
+                    {}
+                sensor_link:
+                  laser_base_link_uncalibrated:
+                    laser_base_link:
+                      laser_pan_link:
+                        laser_end_link:
+                          laser:
+                            {}
+                  pan_tilt_base_link_uncalibrated:
+                    pan_tilt_base_link:
+                      pan_tilt_pan_link:
+                        pan_tilt_tilt_link:
+                          pan_tilt_end_link:
+                            multisense/head_root:
+                              multisense/head:
+                                multisense/accel:
+                                  {}
+                                multisense/gyro:
+                                  {}
+                                multisense/left_camera_frame:
+                                  multisense/left_camera_optical_frame:
+                                    {}
+                                multisense/mag:
+                                  {}
+                                multisense/right_camera_frame:
+                                  multisense/right_camera_optical_frame:
+                                    {}
+                              xtion_link_uncalibrated:
+                                xtion_link:
+                                  xtion_depth_frame:
+                                    xtion_depth_optical_frame:
+                                      {}
+                                  xtion_rgb_frame:
+                                    xtion_rgb_optical_frame:
+                                      {}
+                summit_baseplate_link:
+                  {}
+                summit_frontleft_whole:
+                  {}
+                summit_frontright_whole:
+                  {}
+                summit_mainbody_link:
+                  {}
+                summit_suspension_link:
+                  {}
+                summit_tower2_link:
+                  {}
+                summit_tower_link:
+                  {}
+                summit_wheels_link:
+                  {}
+              local_danger_map:
+                {}
+              mico_ground:
+                {}
+              mico_workspace:
+                {}
+            base_footprint_summit_ctrl:
+              {}
+      Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        battery_mount_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        laser_base_link_uncalibrated:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_end_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        laser_pan_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_api_origin:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mico_end_effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mico_ground:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_finger_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_finger_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_finger_tip_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_finger_tip_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_finger_tip_plate_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_finger_tip_plate_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_link_hand:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mico_workspace:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mug_mount_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        multisense/accel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/gyro:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/head_root:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/left_camera_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/left_camera_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/mag:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/right_camera_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        multisense/right_camera_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pan_tilt_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pan_tilt_base_link_uncalibrated:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pan_tilt_end_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pan_tilt_pan_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pan_tilt_tilt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        projected_sensor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        root:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        sensor2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        sensor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        summit_baseplate_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_frontleft_whole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_frontright_whole:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_mainbody_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_suspension_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_tower2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_tower_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        summit_wheels_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        xsens:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        xtion_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        xtion_link_uncalibrated:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Name: robot_model
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 0.3
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: xtion_cloud
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 1
+      Size (m): 0.01
+      Style: Points
+      Topic: xtion/depth_registered/points
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: filtered_cloud
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 7
+      Size (m): 0.01
+      Style: Points
+      Topic: pcdfilter_xtion/out_cloud
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 255; 255; 255
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 2.50492
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.794797
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 1.53039
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1176
+  Hide Left Dock: false
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd00000004000000000000013c0000040efc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c00610079007301000000280000040e000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000040efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a0056006900650077007300000000280000040e000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f000002f600fffffffb0000000800540069006d00650100000000000004500000000000000000000005fd0000040e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: true
+  Width: 1855
+  X: 1985
+  Y: 24

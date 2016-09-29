@@ -1,0 +1,4 @@
+sensor_msgs/PointCloud2 in_cloud
+---
+bool ok
+sensor_msgs/PointCloud2 out_cloud

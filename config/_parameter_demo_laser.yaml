@@ -1,0 +1,36 @@
+###### topics and services ######
+
+## input topics
+topic_in_cloud           : ""
+topic_in_cloud_old       : ""
+topic_in_laser           : "scan"
+
+## output topics
+#topic_out_cloud          : "~out_cloud"
+
+###### general settings ######
+
+## input filtering
+#skip_count        :    0 # skip no pointcouds
+skip_time         : 0.1  # skip all pointclouds within 0.1 seconds
+#enabled           : true # node starts active
+
+## tf
+#tf_lookup_time    : 0.2   # waiting up to 0.2 seconds
+
+## buffering
+buffer_pointcloud : true # save last pointcloud
+
+## extended output for debugging
+#debugging         : false # normal output
+
+###### laser ######
+
+## all nans within laserscan will be replaced by this range value
+##   if < 0 then this feature will deactivated
+#laser_nan_replacement_value: 10 # meter
+
+###### filter ######
+
+filters: ["cylinder: 0.8 10 laser_base_link 0 0 0 0 0.7 0 0.7 # main body of rover",
+          "cone: 10 0.75 laser pan_tilt_tilt_link             # pan-tilt-unit"     ]

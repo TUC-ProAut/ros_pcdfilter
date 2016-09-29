@@ -1,0 +1,10 @@
+<launch>
+
+    <!-- launching the node for filtering and republishing the pointcloud -->
+    <node name="pcdfilter_pa_node" pkg="pcdfilter_pa"
+      type="pcdfilter_pa_node" output="screen">
+        <!-- load parameter -->
+        <rosparam command="load"
+          file="$(find pcdfilter_pa)/config/parameter.yaml" />
+    </node>
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+
+    <!-- launching the node for filtering and republishing the pointcloud -->
+    <node name="pcdfilter_xtion_demo" pkg="pcdfilter_pa"
+      type="pcdfilter_pa_node" output="screen">
+        <!-- load parameter -->
+        <rosparam command="load"
+          file="$(find pcdfilter_pa)/config/_parameter_demo_xtion.yaml" />
+    </node>
+
+    <!-- using rviz for visualizing -->
+    <node name="rviz" pkg="rviz" type="rviz"
+      args="-d $(find pcdfilter_pa)/config/_rviz_demo_xtion.rviz" />
+</launch>

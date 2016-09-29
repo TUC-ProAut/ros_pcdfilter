@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<package>
+    <name>pcdfilter_pa</name>
+    <version>1.0.0</version>
+    <description>The proaut pointcloud filter package</description>
+    <maintainer email="wepet@hrz.tu-chemnitz.de">wepet</maintainer>
+    <license>other</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+
+    <build_depend>roscpp</build_depend>
+
+    <build_depend>std_msgs</build_depend>
+    <build_depend>sensor_msgs</build_depend>
+    <build_depend>std_srvs</build_depend>
+    <build_depend>message_generation</build_depend>
+
+    <build_depend>tf</build_depend>
+
+    <build_depend>cv_bridge</build_depend>
+    <build_depend>image_transport</build_depend>
+
+    <build_depend>pcl_ros</build_depend>
+    <build_depend>pcl_conversions</build_depend>
+
+    <build_depend>parameter_pa</build_depend>
+
+
+
+    <run_depend>roscpp</run_depend>
+
+    <run_depend>std_msgs</run_depend>
+    <run_depend>sensor_msgs</run_depend>
+    <run_depend>std_srvs</run_depend>
+    <run_depend>message_runtime</run_depend>
+
+    <run_depend>tf</run_depend>
+
+    <run_depend>cv_bridge</run_depend>
+    <run_depend>image_transport</run_depend>
+
+    <run_depend>pcl_ros</run_depend>
+    <run_depend>pcl_conversions</run_depend>
+
+    <run_depend>parameter_pa</run_depend>
+
+</package>
