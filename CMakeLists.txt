@@ -108,6 +108,7 @@ add_dependencies(${PROJECT_NAME}_node
   ${catkin_EXPORTED_TARGETS}
   ${PROJECT_NAME}
   ${PROJECT_NAME}_ros
+  ${PROJECT_NAME}_generate_messages_cpp
   ${PROJECT_NAME}_gencpp
 )
 target_link_libraries(${PROJECT_NAME}_node
