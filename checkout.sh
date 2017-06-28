@@ -49,6 +49,14 @@ NAME_GIT_THIS="pcdfilter"
 NAME_GIT_SUBS="parameter"
 
 ###############################################################################
+URL_GIT_BASE="https://github.com/peterweissig/"
+URL_GIT_THIS="${URL_GIT_BASE}ros_${NAME_GIT_THIS}.git"
+DIR_THIS="${NAME_GIT_THIS}_pa/"
+
+NAME_CHECKOUT_SCRIPT="checkout.sh"
+NAME_ARGUMENT_SCRIPT="dependency"
+
+###############################################################################
 if [ "$#" -eq 0 ]; then
     echo "Running this script without parameters."
     echo "Therefore the project"
