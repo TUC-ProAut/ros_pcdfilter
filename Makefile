@@ -15,7 +15,7 @@
 #                                                                             #
 # New BSD License                                                             #
 #                                                                             #
-# Copyright (c) 2015-2016, Peter Weissig, Technische Universität Chemnitz     #
+# Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     #
 # All rights reserved.                                                        #
 #                                                                             #
 # Redistribution and use in source and binary forms, with or without          #
@@ -46,22 +46,21 @@
 
 NAME_GIT_THIS=pcdfilter
 
-URL_GIT_BASE=https://github.com/peterweissig/
-URL_GIT_THIS=$(URL_GIT_BASE)ros_$(NAME_GIT_THIS).git
+.PHONY : update status pull push
 
-.PHONY : update status push
-
-update:
-	@echo ""
-	@echo "### update $(NAME_GIT_THIS) ###"
-	git pull "$(URL_GIT_THIS)"
+update: pull
 
 status:
 	@echo ""
 	@echo "### status of $(NAME_GIT_THIS) ###"
 	@git status --untracked-files
 
+pull:
+	@echo ""
+	@echo "### pulling $(NAME_GIT_THIS) ###"
+	@git pull
+
 push:
 	@echo ""
-	@echo "### pushing of $(NAME_GIT_THIS) ###"
-	git push "$(URL_GIT_THIS)"
+	@echo "### pushing $(NAME_GIT_THIS) ###"
+	@git push
