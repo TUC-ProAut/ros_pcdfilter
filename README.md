@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This package was designed to remove simple geometric shapes from pointclouds. E.g. A cube or a sphere. Several of these filters can be applied to a pointcloud in one shot. For more details on the types of filters and their parameters see [Filters](#Filters).
+This package was designed to remove simple geometric shapes from pointclouds. E.g. A cube or a sphere. Several of these filters can be applied to a pointcloud in one shot. For more details on the types of filters and their parameters see [Filters](#filters).
 
-This package includes a full node and a ros interface for one's own node. For more details about the node, like topic names and parameters, see [Node](#Node).
+This package includes a full node and a ros interface for one's own node. For more details about the node, like topic names and parameters, see [Node](#node).
 
 The package can handle three different input types of pointclouds:
 * [sensor_msgs/PointCloud2](http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud2.html) (this is also the output type)
@@ -57,7 +57,7 @@ Parameter Name        | Type              | Description
 "~enabled"            | bool              | Flag for setting start up behaviour. If node is filtering or not at startup.
 "~laser_nan_replacement_value" | double   | If a nan-value is represented within the laser scan, it might indicate "no obstacle within range". Therefore this parameters will replace those values with a fixed number.
 
-See also <a href="https://github.com/peterweissig/ros_pcdfilter/blob/master/config/parameter.yaml">this config file</a>. It contains all parameters and their standard value.
+See also [this config file](https://github.com/peterweissig/ros_pcdfilter/blob/master/config/parameter.yaml). It contains all parameters and their standard value.
 
 ## Filters
 
@@ -88,7 +88,7 @@ This is the definition of every single filter as a string.
 >> ":"       | current filter is <em>required</em>; if some tf is missing the whole filtering is aborted and no output pointcloud is generated
 >> "?"       | current filter <em>may be skipped</em>; if some tf is missing then the current filter is not applied; but in any case the whole filtering and output process is continued
 >>
->> To control how long the filter should wait for the necessary tf there exists a parameter "~tf_lookup_time" - see also <a href="#Node">Node</a>.
+>> To control how long the filter should wait for the necessary tf there exists a parameter "~tf_lookup_time" - see also [Node](#node).
 
 * dimensions:
 >> Number of dimensions depends on the type of the current filter(see above). At least one dimension is always needed, e.g. for a cube. Three dimensions must be set for a cuboid.<br>
@@ -153,7 +153,7 @@ Related packages:
 
 ## ROS Build-Status and Documentation
 
-ROS-Distribution | Build-Status | Documentation      
+ROS-Distribution | Build-Status | Documentation
 -----------------|--------------|---------------
 Indigo | [![Build Status](http://build.ros.org/buildStatus/icon?job=Idev__pcdfilter_pa__ubuntu_trusty_amd64)](http://build.ros.org/job/Idev__pcdfilter_pa__ubuntu_trusty_amd64/) | [docs.ros.org](http://docs.ros.org/indigo/api/pcdfilter_pa/html/index.html)
 Jade | [![Build Status](http://build.ros.org/buildStatus/icon?job=Jdev__pcdfilter_pa__ubuntu_trusty_amd64)](http://build.ros.org/job/Jdev__pcdfilter_pa__ubuntu_trusty_amd64/) | [docs.ros.org](http://docs.ros.org/jade/api/pcdfilter_pa/html/index.html)

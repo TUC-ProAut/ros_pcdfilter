@@ -160,7 +160,7 @@ link: 0.2 0 arm_link1 arm_link2
  * one frame (zero overshoot).\n
  * The radius is 0.2 [meters].\n
  * The height depends only the relative position of the two frames.\n
- * Also the orientation of the cylinder is not fixed to any frames
+ * Also the orientation of the cylinder is not fixed to any frame.
  *
  * \verbatim
 !cone: 10 1 laser pan_tilt_tilt_link
