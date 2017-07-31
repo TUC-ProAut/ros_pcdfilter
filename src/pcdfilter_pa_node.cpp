@@ -47,7 +47,7 @@
 #include "pcdfilter_pa_node.h"
 
 // ros headers
-#include <parameter_pa_ros.h>
+#include <parameter_pa/parameter_pa_ros.h>
 
 // standard headers
 #include <string>
