@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa_ros_filter.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros_filter.h"
 
 // standard headers
 #include <sstream>

@@ -47,8 +47,8 @@
 #define __PCD_FILTER_PA_H
 
 // local headers
-#include "pcdfilter_pa_filter.h"
-#include "pcdfilter_pa_parameter.h"
+#include "pcdfilter_pa/pcdfilter_pa_filter.h"
+#include "pcdfilter_pa/pcdfilter_pa_parameter.h"
 
 // additional libraries
 #include <opencv2/highgui/highgui.hpp>

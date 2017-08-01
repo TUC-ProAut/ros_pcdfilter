@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa_ros.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros.h"
 
 // ros headers
 #include <sensor_msgs/point_cloud_conversion.h>

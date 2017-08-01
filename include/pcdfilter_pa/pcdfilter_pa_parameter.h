@@ -47,7 +47,7 @@
 #define __PCD_FILTER_PA_PARAMETER_H
 
 // local header
-#include "pcdfilter_pa_filter.h"
+#include "pcdfilter_pa/pcdfilter_pa_filter.h"
 
 //**************************[cPcdFilterPaParameter]*************************
 class cPcdFilterPaParameter {

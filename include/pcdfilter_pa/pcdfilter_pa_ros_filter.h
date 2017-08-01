@@ -47,7 +47,7 @@
 #define __PCD_FILTER_PA_ROS_FILTER_H
 
 // local headers
-#include "pcdfilter_pa_filter.h"
+#include "pcdfilter_pa/pcdfilter_pa_filter.h"
 
 // ros headers
 #include <tf/transform_datatypes.h>

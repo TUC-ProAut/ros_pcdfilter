@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa_node.h"
+#include "pcdfilter_pa/pcdfilter_pa_node.h"
 
 // ros headers
 #include <parameter_pa/parameter_pa_ros.h>

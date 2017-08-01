@@ -1,7 +1,7 @@
 /******************************************************************************
 *                                                                             *
-* pcdfilter_pa_pa_node.h                                                      *
-* ======================                                                      *
+* pcdfilter_pa_ros.h                                                          *
+* ==================                                                          *
 *                                                                             *
 *******************************************************************************
 *                                                                             *
@@ -43,14 +43,14 @@
 *                                                                             *
 ******************************************************************************/
 
-#ifndef __PCD_FILTER_PA_NODE_H
-#define __PCD_FILTER_PA_NODE_H
+#ifndef __PCD_FILTER_PA_ROS_H
+#define __PCD_FILTER_PA_ROS_H
 
 // local headers
-#include "pcdfilter_pa_ros.h"
-#include "pcdfilter_pa_node_parameter.h"
-#include "pcdfilter_pa/PcdFilterPaFilter.h"
-#include "pcdfilter_pa/PcdFilterPaCloud.h"
+#include "pcdfilter_pa/pcdfilter_pa.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros_parameter.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros_throttle.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros_filter.h"
 
 // ros headers
 #include <ros/ros.h>
@@ -58,95 +58,83 @@
 #include <sensor_msgs/PointCloud2.h>
 #include <sensor_msgs/PointCloud.h>
 #include <sensor_msgs/LaserScan.h>
-#include <std_srvs/Empty.h>
 
-#include <tf/transform_listener.h>
+#include <tf/transform_datatypes.h>
+
+// additional libraries
+#include <opencv2/highgui/highgui.hpp>
 
 // standard headers
 #include <string>
-#include <vector>
 
-//**************************[main]*********************************************
-int main(int argc, char **argv);
-
-//**************************[cPcdFilterPaNode]*********************************
-class cPcdFilterPaNode : public cPcdFilterPaRos {
+//**************************[cPcdFilterPaRos]**********************************
+class cPcdFilterPaRos : public cPcdFilterPa {
   public:
+
     //! default constructor
-    cPcdFilterPaNode();
+    cPcdFilterPaRos();
 
     //! default destructor
-    ~cPcdFilterPaNode();
+    ~cPcdFilterPaRos();
 
-  protected:
-    //! ros specific variables, which will be read from Parameterserver
-    cPcdFilterPaNodeParameter nodeparams_;
+    //! converts the given pointcloud to newer format
+    sensor_msgs::PointCloud2Ptr convertCloud(
+      const sensor_msgs::PointCloudConstPtr &msg) const;
 
-    //! node handler for topic subscription and advertising
-    ros::NodeHandle nh_;
+    //! converts the given laserscan to a pointcloud
+    sensor_msgs::PointCloud2Ptr convertCloud(
+      const sensor_msgs::LaserScanConstPtr &msg) const;
 
-    //! for getting all necessary tfs
-    tf::TransformListener tf_listener_;
+    //! updates the internal transformations
+    //! this should be done for each pointcloud
+    bool updateTf( const tf::TransformListener &tf_listener,
+        const std::string base_frame,
+        const ros::Time time = ros::Time::now());
 
-    //! subscriber for a pointcloud
-    ros::Subscriber sub_pcd_;
-    //! subscriber for a pointcloud (old format)
-    ros::Subscriber sub_pcd_old_;
-    //! subscriber for a laserscan
-    ros::Subscriber sub_laser_;
+    //! updates the internal transformations for a buffered pointcloud
+    //! this should be done for each pointcloud
+    bool updateTf( const tf::TransformListener &tf_listener);
 
-    //! publisher for filtered pointcloud
-    ros::Publisher pub_pcd_;
+    //! filters the given pointcloud
+    bool filterCloud(const sensor_msgs::PointCloud2ConstPtr &msg,
+      sensor_msgs::PointCloud2Ptr &result);
 
-    //! service for filtering
-    ros::ServiceServer ser_filter_;
+    //! filters the buffered pointcloud
+    bool filterCloud(sensor_msgs::PointCloud2Ptr &result);
 
-    //! service for adding additional filters
-    ros::ServiceServer ser_add_filters_;
-    //! service for changing filters
-    ros::ServiceServer ser_change_filters_;
+    //! internal function
+    //! extracts the x,y and z coordinates to opencv matrix of float
+    //! if force_copy is set the returned matrix is never pointing to the
+    //!   original pointcloud message
+    const cv::Mat convertCloudToOpencv(
+      const sensor_msgs::PointCloud2ConstPtr &msg,
+      const bool force_copy = false) const;
 
-    //! service for enabling node
-    ros::ServiceServer ser_enable_;
-    //! service for disabling node
-    ros::ServiceServer ser_disable_;
+    //! internal function
+    //! applys the mask to the pointcloud and creates a new pointcloud
+    //!   to store the results
+    sensor_msgs::PointCloud2Ptr applyMasktoCloud(
+      const sensor_msgs::PointCloud2ConstPtr cloud,
+      const std::vector<bool> mask) const;
 
-    //! callback function for receiving a pointcloud
-    void setCloudCallbackSub(const sensor_msgs::PointCloud2ConstPtr &msg);
-    //! callback function for receiving a pointcloud (old format)
-    void setCloudOldCallbackSub(const sensor_msgs::PointCloudConstPtr &msg);
-    //! callback function for receiving a laserscan
-    void setCloudLaserCallbackSub(const sensor_msgs::LaserScanConstPtr &msg);
 
-    //! callback function for filtering via service
-    bool filterCallbackSrv(
-        pcdfilter_pa::PcdFilterPaCloud::Request  &req,
-        pcdfilter_pa::PcdFilterPaCloud::Response &res);
+    //! object for input throttling - e.g. only every 5th pointcloud
+    cPcdFilterPaRosThrottle input_throttle_;
 
-    //! callback function for adding additional filters
-    bool addFiltersCallbackSrv(
-        pcdfilter_pa::PcdFilterPaFilter::Request  &req,
-        pcdfilter_pa::PcdFilterPaFilter::Response &res);
-    //! callback function for changing filters
-    bool changeFiltersCallbackSrv(
-        pcdfilter_pa::PcdFilterPaFilter::Request  &req,
-        pcdfilter_pa::PcdFilterPaFilter::Response &res);
+    //! object for filter handling
+    cPcdFilterPaRosFilters filters_;
 
-    //! callback function for enabling filter node
-    bool enableCallbackSrv(std_srvs::Empty::Request  &req,
-        std_srvs::Empty::Response &res);
-    //! callback function for disabling filter node
-    bool disableCallbackSrv(std_srvs::Empty::Request  &req,
-        std_srvs::Empty::Response &res);
+    //! ros specific parameter
+    cPcdFilterPaRosParameter rosparams_;
 
-    //! function for adding several filters and giving feedback
-    void addFilters(const std::vector<std::string> &new_filters);
+    //! buffered pointcloud
+    //!   (usage depends on flag rosparams_.buffered_pointcloud)
+    cv::Mat pcd_buffered_points_;
+    //! frame id of last pointcloud
+    //!   (usage depends on flag rosparams_.buffered_pointcloud)
+    sensor_msgs::PointCloud2ConstPtr pcd_buffered_msg_;
 
-  private:
-    //! function for activating this node (enabling inputs)
-    void enable(void);
-    //! function for deactivating this node (disabling inputs)
-    void disable(void);
 };
 
-#endif // __PCD_FILTER_PA_NODE_H
+
+#endif // __PCD_FILTER_PA_ROS_H

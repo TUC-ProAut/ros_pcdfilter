@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa_ros_parameter.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros_parameter.h"
 
 //**************************[cPcdFilterPaRosParameter]*************************
 cPcdFilterPaRosParameter::cPcdFilterPaRosParameter(void) {

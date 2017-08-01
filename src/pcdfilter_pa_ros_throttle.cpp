@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa_ros_throttle.h"
+#include "pcdfilter_pa/pcdfilter_pa_ros_throttle.h"
 
 //**************************[cPcdFilterPaRosThrottle]**************************
 cPcdFilterPaRosThrottle::cPcdFilterPaRosThrottle() {

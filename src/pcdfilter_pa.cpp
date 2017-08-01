@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa.h"
+#include "pcdfilter_pa/pcdfilter_pa.h"
 
 // additional libraries
 #include "opencv2/calib3d/calib3d.hpp"

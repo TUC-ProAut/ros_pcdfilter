@@ -44,7 +44,7 @@
 ******************************************************************************/
 
 // local headers
-#include "pcdfilter_pa_node_parameter.h"
+#include "pcdfilter_pa/pcdfilter_pa_node_parameter.h"
 
 //**************************[cPcdFilterPaNodeParameter]************************
 cPcdFilterPaNodeParameter::cPcdFilterPaNodeParameter(void) {
