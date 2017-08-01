@@ -56,6 +56,7 @@ catkin_package(
     message_runtime
 
     tf
+    laser_geometry
 
     cv_bridge
     image_transport
