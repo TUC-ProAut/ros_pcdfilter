@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
     <name>pcdfilter_pa</name>
-    <version>1.1.0</version>
+    <version>1.0.0</version>
     <description>ProAut pointcloud filter package</description>
     <maintainer email="wepet@hrz.tu-chemnitz.de">Peter Weissig</maintainer>
     <license>BSD</license>
