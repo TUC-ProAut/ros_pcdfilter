@@ -1,12 +1,12 @@
 ###### topics and services ######
 
 ## input topics
-#topic_in_cloud           : "~in_cloud"
-#topic_in_cloud_old       : "~in_cloud_old"
-#topic_in_laser           : "~in_laser"
+#topic_in_cloud           : "~/in_cloud"
+#topic_in_cloud_old       : "~/in_cloud_old"
+#topic_in_laser           : "~/in_laser"
 
 ## output topics
-#topic_out_cloud          : "~out_cloud"
+#topic_out_cloud          : "~/out_cloud"
 
 ###### general settings ######
 

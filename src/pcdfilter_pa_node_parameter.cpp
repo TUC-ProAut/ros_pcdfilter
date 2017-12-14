@@ -49,9 +49,9 @@
 //**************************[cPcdFilterPaNodeParameter]************************
 cPcdFilterPaNodeParameter::cPcdFilterPaNodeParameter(void) {
 
-    topic_in_cloud_     = "~in_cloud"    ;
-    topic_in_cloud_old_ = "~in_cloud_old";
-    topic_in_laser_     = "~in_laser"    ;
+    topic_in_cloud_     = "~/in_cloud"    ;
+    topic_in_cloud_old_ = "~/in_cloud_old";
+    topic_in_laser_     = "~/in_laser"    ;
 
-    topic_out_cloud_    = "~out_cloud"   ;
+    topic_out_cloud_    = "~/out_cloud"   ;
 }
