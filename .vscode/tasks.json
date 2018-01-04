@@ -1,0 +1,23 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "source ../../devel/setup.bash && catkin_make -C ../../",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "init (kinetic)",
+            "type": "shell",
+            "command": "source /opt/ros/kinetic/setup.bash && catkin_make -C ../../",
+            "problemMatcher": []
+        }
+    ]
+}
+
