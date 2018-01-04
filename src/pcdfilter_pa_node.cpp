@@ -69,38 +69,38 @@ cPcdFilterPaNode::cPcdFilterPaNode() {
     cParameterPaRos paramloader;
 
     std::vector<std::string> temp_filter;
-    paramloader.load("~filters"          , temp_filter);
+    paramloader.load("~/filters"          , temp_filter);
 
-    paramloader.load("~skip_count"       , input_throttle_.skip_count_  );
-    paramloader.load("~skip_time"        , input_throttle_.skip_time_   );
+    paramloader.load("~/skip_count"       , input_throttle_.skip_count_  );
+    paramloader.load("~/skip_time"        , input_throttle_.skip_time_   );
 
-    paramloader.load("~tf_lookup_time"   , filters_.tf_lookup_time_     );
-    paramloader.load("~buffer_pointcloud", rosparams_.buffer_pointcloud_);
-    paramloader.load("~debugging"        , rosparams_.debugging_        );
-    paramloader.load("~laser_nan_replacement_value",
+    paramloader.load("~/tf_lookup_time"   , filters_.tf_lookup_time_     );
+    paramloader.load("~/buffer_pointcloud", rosparams_.buffer_pointcloud_);
+    paramloader.load("~/debugging"        , rosparams_.debugging_        );
+    paramloader.load("~/laser_nan_replacement_value",
       rosparams_.laser_nan_replacement_value_);
 
     bool enabled = true;
-    paramloader.load("~enabled"          , enabled                      );
+    paramloader.load("~/enabled"          , enabled                      );
 
 
     bool remapping = false;
-    remapping|= paramloader.load_topic("~topic_in_cloud"    ,
+    remapping|= paramloader.loadTopic("~/topic_in_cloud"    ,
         nodeparams_.topic_in_cloud_     );
-    remapping|= paramloader.load_topic("~topic_in_cloud_old",
+    remapping|= paramloader.loadTopic("~/topic_in_cloud_old",
         nodeparams_.topic_in_cloud_old_ );
-    remapping|= paramloader.load_topic("~topic_in_laser"    ,
+    remapping|= paramloader.loadTopic("~/topic_in_laser"    ,
         nodeparams_.topic_in_laser_     );
 
-    paramloader.load_topic("~topic_out_cloud"               ,
+    paramloader.loadTopic("~/topic_out_cloud"               ,
         nodeparams_.topic_out_cloud_    );
 
     // Publisher for filtered pointcloud
     pub_pcd_ = nh_.advertise<sensor_msgs::PointCloud2>(
         nodeparams_.topic_out_cloud_, 10, true);
 
-    std::string str_service("~");
-    paramloader.resolve_ressourcename(str_service);
+    std::string str_service = paramloader.resolveRessourcename("~/");
+    
     // Service for adding additional filters
     ser_filter_ = nh_.advertiseService( str_service + "filter",
         &cPcdFilterPaNode::filterCallbackSrv, this);
