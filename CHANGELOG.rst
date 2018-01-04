@@ -2,9 +2,17 @@
 Changelog for package pcdfilter_pa
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.2.0 (2018-01-04)
+------------------
+* bugfixed g++-warning (missing whitespace after the macro name)
+* updated parameters (*.yaml and ...node_parameter.cpp)
+* updated documentation
+* + changed api to new version of parameter_pa
+  + added support for visual studio code
+* Contributors: Peter Weissig
+
 1.1.0 (2017-08-03)
 ------------------
-
 * bugfix (added laser_geometry)
 * moved header from include/ to include/${project_name}
   also fixed related paths
