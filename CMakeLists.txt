@@ -5,6 +5,10 @@ find_package(PCL REQUIRED)
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
+# bugfix for g++-Warning
+#   "<command-line>:0:15: warning: missing whitespace after the macro name"
+remove_definitions(-DDISABLE_LIBUSB-1.0)
+
 find_package(catkin REQUIRED COMPONENTS
   roscpp
 
