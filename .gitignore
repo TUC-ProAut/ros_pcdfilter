@@ -6,8 +6,8 @@ CATKIN_IGNORE
 # subversion
 .svn
 
-# older backup files
-deprecated/
+# documentation
+Doxyfile
 
 # eclipse stuff
 .project
