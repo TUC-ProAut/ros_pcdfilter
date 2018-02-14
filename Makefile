@@ -6,7 +6,7 @@
 ###############################################################################
 #                                                                             #
 # github repository                                                           #
-#   https://github.com/peterweissig/ros_pcdfilter                             #
+#   https://github.com/TUC-ProAut/ros_pcdfilter                               #
 #                                                                             #
 # Chair of Automation Technology, Technische Universität Chemnitz             #
 #   https://www.tu-chemnitz.de/etit/proaut                                    #
@@ -15,7 +15,7 @@
 #                                                                             #
 # New BSD License                                                             #
 #                                                                             #
-# Copyright (c) 2015-2017, Peter Weissig, Technische Universität Chemnitz     #
+# Copyright (c) 2015-2018, Peter Weissig, Technische Universität Chemnitz     #
 # All rights reserved.                                                        #
 #                                                                             #
 # Redistribution and use in source and binary forms, with or without          #

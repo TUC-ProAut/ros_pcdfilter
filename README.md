@@ -57,7 +57,7 @@ Parameter Name         | Type              | Description
 "~/enabled"            | bool              | Flag for setting start up behaviour. Indicates if node is filtering at startup, or not.
 "~/laser_nan_replacement_value" | double   | If a nan-value is represented within the laser scan, it might indicate "no obstacle within range". Therefore this parameters will replace those values with a fixed number.
 
-See also [this config file](https://github.com/peterweissig/ros_pcdfilter/blob/master/config/parameter.yaml). It contains all parameters and their default value.
+See also [this config file](https://github.com/TUC-ProAut/ros_pcdfilter/blob/master/config/parameter.yaml). It contains all parameters and their default value.
 
 ## Filters
 
@@ -146,10 +146,10 @@ one frame (zero overshoot).<br>
 ## Links
 
 Source code at github:
-> https://github.com/peterweissig/ros_pcdfilter
+> https://github.com/TUC-ProAut/ros_pcdfilter
 
 Related packages:
-> https://github.com/peterweissig/ros_parameter
+> https://github.com/TUC-ProAut/ros_parameter
 
 ## ROS Build-Status and Documentation
 

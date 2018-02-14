@@ -63,7 +63,7 @@ rosrun pcdfilter_pa pcdfilter_pa_node
  * "~/laser_nan_replacement_value" | double   | If a nan-value is represented within the laser scan, it might indicate "no obstacle within range". Therefore this parameters will replace those values with a fixed number.
  *
  * See also
- * <a href="https://github.com/peterweissig/ros_pcdfilter/blob/master/config/parameter.yaml">this config file</a>.
+ * <a href="https://github.com/TUC-ProAut/ros_pcdfilter/blob/master/config/parameter.yaml">this config file</a>.
  * It contains all parameters and their default value.
  *
  * @section filters_sec Filters
@@ -175,10 +175,10 @@ link: 0.2 0 arm_link1 arm_link2
  * @section links_sec Links
  *
  * Source code at github:
- *  + https://github.com/peterweissig/ros_pcdfilter
+ *  + https://github.com/TUC-ProAut/ros_pcdfilter
  *
  * Related packages:
- *  + https://github.com/peterweissig/ros_parameter
+ *  + https://github.com/TUC-ProAut/ros_parameter
  *
  * @section doc_sec ROS Documentation
  *
