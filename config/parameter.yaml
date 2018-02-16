@@ -1,12 +1,6 @@
-###### topics and services ######
+###### filter ######
 
-## input topics
-#topic_in_cloud           : "~/in_cloud"
-#topic_in_cloud_old       : "~/in_cloud_old"
-#topic_in_laser           : "~/in_laser"
-
-## output topics
-#topic_out_cloud          : "~/out_cloud"
+#filters: []
 
 ###### general settings ######
 
@@ -30,6 +24,12 @@
 ##   if < 0 then this feature will deactivated
 #laser_nan_replacement_value: -1 # meter
 
-###### filter ######
+###### topics and services ######
 
-#filters: []
+## input topics
+#topic_in_cloud           : "~/in_cloud"
+#topic_in_cloud_old       : "~/in_cloud_old"
+#topic_in_laser           : "~/in_laser"
+
+## output topics
+#topic_out_cloud          : "~/out_cloud"

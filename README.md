@@ -13,51 +13,67 @@ The package can handle three different input types of pointclouds:
 
 Additionaly the input data can be throttled to reduce the cpu load.
 
+
 ## Node
 
 ```
 rosrun pcdfilter_pa pcdfilter_pa_node
+roslaunch pcdfilter_pa pcdfilter_pa.launch
 ```
 
 ### Input and Output Topics:
 
-Topic Name       | Type                    | Description
------------------|-------------------------|---------------------------------
-"~/in_cloud"     | sensor_msgs/PointCloud2 | Input as <em>new</em> pointcloud type.
-"~/in_cloud_old" | sensor_msgs/PointCloud  | Input as <em>old</em> pointloud type. Will be converted to new pointcloud type.
-"~/in_laser"     | sensor_msgs/LaserScan   | Input as single laser scan. Will be converted to new pointcloud type by package "laser_geometry".
-"~/out_cloud"    | sensor_msgs/PointCloud2 | Output of filtering node.
+Topic Name       | Type                                                                                     | Description
+-----------------|------------------------------------------------------------------------------------------|---------------------------------
+"~/in_cloud"     | [sensor_msgs/PointCloud2](http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud2.html) | Input as <em>new</em> pointcloud type.
+"~/in_cloud_old" | [sensor_msgs/PointCloud](http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud.html)   | Input as <em>old</em> pointloud type. Will be converted to new pointcloud type.
+"~/in_laser"     | [sensor_msgs/LaserScan](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html)     | Input as single laser scan. Will be converted to new pointcloud type by package "laser_geometry".
+"~/out_cloud"    | [sensor_msgs/PointCloud2](http://docs.ros.org/api/sensor_msgs/html/msg/PointCloud2.html) | Output of filtering node.
 
 All topics can be remapped using parameters (see below).
 
 ### Services:
 
-Service Name       | Type                    | Description
--------------------|-------------------------|---------------------------------
-"~/filter"         | PcdFilterPaCloud.srv    | Forced filtering via service call. No throttling is done and input/output cloud is part of service message.
-"~/add_filters"    | PcdFilterPaFilter.srv   | Adding new filters. Old filters are kept.
-"~/change_filters" | PcdFilterPaFilter.srv   | Adding new filters, but removing all old filters before adding.
-"~/enable"         | std_srvs/Empty          | Disables this node. This also disconnects the node from all input messages.
-"~/disable"        | std_srvs/Empty          | Enables this node.
+Service Name       | Type                                                                                                                | Description
+-------------------|---------------------------------------------------------------------------------------------------------------------|---------------------------------
+"~/filter"         | [pcdfilter_pa/PcdFilterPaCloud](https://github.com/TUC-ProAut/ros_pcdfilter/blob/master/srv/PcdFilterPaCloud.srv)   | Forced filtering via service call. No throttling is done and input/output cloud is part of service message.
+"~/add_filters"    | [pcdfilter_pa/PcdFilterPaFilter](https://github.com/TUC-ProAut/ros_pcdfilter/blob/master/srv/PcdFilterPaFilter.srv) | Adding new filters. Old filters are kept.
+"~/change_filters" | [pcdfilter_pa/PcdFilterPaFilter](https://github.com/TUC-ProAut/ros_pcdfilter/blob/master/srv/PcdFilterPaFilter.srv) | Adding new filters, but removing all old filters before adding.
+"~/enable"         | std_srvs/Empty                                                                                                      | Disables this node. This also disconnects the node from all input messages.
+"~/disable"        | std_srvs/Empty                                                                                                      | Enables this node.
 
 ### Parameters:
 
+#### filter
 Parameter Name         | Type              | Description
 -----------------------|-------------------|-------------------------------------
-"~/topic_in_cloud"     | string            | Name of input topic for new pointclouds.
-"~/topic_in_cloud_old" | string            | Name of input topic for old pointclouds.
-"~/topic_in_laser"     | string            | Name of input topic for laser scans.
-"~/topic_out_cloud"    | string            | Name of output topic for filtered pointcloud.
 "~/filters"            | vector of strings | All pointcloud filters as an array of strings.
+
+#### general settings
+Parameter Name         | Type              | Description
+-----------------------|-------------------|-------------------------------------
 "~/skip_count"         | integer           | Input throttling. Number of skipped messages after each processed message.
 "~/skip_time"          | double            | Input throttling. Time intervall in seconds. After each processed message, this intervall starts and all input messages will be skipped.
 "~/tf_lookup_time"     | double            | Maximum time in seconds for waiting for a specific TF transform.
 "~/buffer_pointcloud"  | bool              | Flag for buffering the last received pointcloud. This can be used to test different filters without resending the some pointcloud.
 "~/debugging"          | bool              | Flag for enabling extented output.
 "~/enabled"            | bool              | Flag for setting start up behaviour. Indicates if node is filtering at startup, or not.
+
+#### laser
+Parameter Name         | Type              | Description
+-----------------------|-------------------|-------------------------------------
 "~/laser_nan_replacement_value" | double   | If a nan-value is represented within the laser scan, it might indicate "no obstacle within range". Therefore this parameters will replace those values with a fixed number.
 
+#### topics and services
+Parameter Name         | Type              | Description
+-----------------------|-------------------|-------------------------------------
+"~/topic_in_cloud"     | string            | Name of input topic for new pointclouds.
+"~/topic_in_cloud_old" | string            | Name of input topic for old pointclouds.
+"~/topic_in_laser"     | string            | Name of input topic for laser scans.
+"~/topic_out_cloud"    | string            | Name of output topic for filtered pointcloud.
+
 See also [this config file](https://github.com/TUC-ProAut/ros_pcdfilter/blob/master/config/parameter.yaml). It contains all parameters and their default value.
+
 
 ## Filters
 
@@ -143,7 +159,8 @@ one frame (zero overshoot).<br>
 > The height is 10 [meters].<br>
 > The angle at the top is 90 degrees (ratio of radius to height is 1:1).
 
-## Links
+
+## Links and packages
 
 Source code at github:
 > https://github.com/TUC-ProAut/ros_pcdfilter
@@ -151,11 +168,17 @@ Source code at github:
 Related packages:
 > https://github.com/TUC-ProAut/ros_parameter
 
+ROS packages:
+> ros-indigo-pcdfilter-pa
+> ros-kinetic-pcdfilter-pa
+> ros-lunar-pcdfilter-pa
+
+
 ## ROS Build-Status and Documentation
 
-ROS-Distribution | Build-Status | Documentation
------------------|--------------|---------------
-Indigo | [![Build Status](http://build.ros.org/buildStatus/icon?job=Idev__pcdfilter_pa__ubuntu_trusty_amd64)](http://build.ros.org/job/Idev__pcdfilter_pa__ubuntu_trusty_amd64/) | [docs.ros.org](http://docs.ros.org/indigo/api/pcdfilter_pa/html/index.html)
-Jade | EOL May 2017 | [docs.ros.org](http://docs.ros.org/jade/api/pcdfilter_pa/html/index.html)
-Kinetic | [![Build Status](http://build.ros.org/buildStatus/icon?job=Kdev__pcdfilter_pa__ubuntu_xenial_amd64)](http://build.ros.org/job/Kdev__pcdfilter_pa__ubuntu_xenial_amd64/) | [docs.ros.org](http://docs.ros.org/kinetic/api/pcdfilter_pa/html/index.html)
-Lunar | [![Build Status](http://build.ros.org/buildStatus/icon?job=Ldev__pcdfilter_pa__ubuntu_xenial_amd64)](http://build.ros.org/job/Ldev__pcdfilter_pa__ubuntu_xenial_amd64/) | [docs.ros.org](http://docs.ros.org/lunar/api/pcdfilter_pa/html/index.html)
+ROS-Distribution | Build-Status                                                                                                                                                            | Documentation
+-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------
+Indigo           | [![Build Status](http://build.ros.org/buildStatus/icon?job=Idev__pcdfilter_pa__ubuntu_trusty_amd64)](http://build.ros.org/job/Idev__pcdfilter_pa__ubuntu_trusty_amd64/) | [docs.ros.org](http://docs.ros.org/indigo/api/pcdfilter_pa/html/index.html)
+Jade             | EOL May 2017                                                                                                                                                            | [docs.ros.org](http://docs.ros.org/jade/api/pcdfilter_pa/html/index.html)
+Kinetic          | [![Build Status](http://build.ros.org/buildStatus/icon?job=Kdev__pcdfilter_pa__ubuntu_xenial_amd64)](http://build.ros.org/job/Kdev__pcdfilter_pa__ubuntu_xenial_amd64/) | [docs.ros.org](http://docs.ros.org/kinetic/api/pcdfilter_pa/html/index.html)
+Lunar            | [![Build Status](http://build.ros.org/buildStatus/icon?job=Ldev__pcdfilter_pa__ubuntu_xenial_amd64)](http://build.ros.org/job/Ldev__pcdfilter_pa__ubuntu_xenial_amd64/) | [docs.ros.org](http://docs.ros.org/lunar/api/pcdfilter_pa/html/index.html)
